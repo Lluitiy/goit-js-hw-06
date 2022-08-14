@@ -1,57 +1,39 @@
-// Напиши скрипт который:
-
-// Посчитает и выведет в консоль количество категорий в
+//? Напиши скрипт который:
+//Посчитает и выведет в консоль количество категорий в
 // ul#categories, то есть элементов li.item.
-const listCategories = document.querySelectorAll('h2');
+//Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль
+//текст заголовка элемента(тега < h2 >) и количество элементов
+//? в категории(всех вложенных в него < li >).
+//TODO Number of categories: 3
+const listCategories = document.querySelectorAll('.item').length;
 console.log('Number of categories:', listCategories);
 
-function totalListCategories(params) {
-    let array = [];
+const categoryList = document.querySelector('#categories');
+//TODO Category: Animals
+//TODO Elements: 4
+const categoryListAnimal = categoryList.children[0];
+const categoryListAnimalHeading = categoryListAnimal.querySelector('h2').textContent;
+console.log('Category:', categoryListAnimalHeading);
 
-    for (const el of params) {
-        array.push(el.textContent)
-    }
-    return array.length;
-//   params.forEach(el => el.textContent);
-}
-totalListCategories(listCategories);
-console.log('Number of categories:', totalListCategories(listCategories));
+const categoryListAnimalAmount = categoryListAnimal.querySelectorAll('li').length;
+console.log('Elements:', categoryListAnimalAmount);
 
-// Для каждого элемента li.item в списке
-// ul#categories, найдет и выведет в консоль текст
+//TODO Category: Products
+//TODO Elements: 3
+const categoryListProduct = categoryList.children[1];
+const categoryListProductHeading = categoryListProduct.querySelector('h2').textContent;
+console.log('Category:', categoryListProductHeading);
 
-// const categoryNames = document.querySelectorAll('.item');
-// console.log(categoryNames);
-// заголовка элемента(тега < h2 >) и количество элементов
-// в категории(всех вложенных в него < li >).
-// В результате, в консоли будут выведены такие сообщения.
+const categoryListProductAmount = categoryListProduct.querySelectorAll('li').length;
+console.log('Elements:', categoryListProductAmount);
 
-// Number of categories: 3
+//TODO Category: Technologies
+//TODO Elements: 5
 
-// Category: Animals
-// Elements: 4
+const categoryListTechnologies = categoryList.children[2];
+const categoryListTechnologiesHeading = categoryListTechnologies.querySelector('h2').textContent;
+console.log('Category:', categoryListAnimalHeading);
 
-// Category: Products
-// Elements: 3
-
-// Category: Technologies
-// Elements: 5
-
-
-//!! ПОЧЕМУ РАБОТАЕТ С ФОР ОФОМ А С ФОРЫЧЕМ НЕТ ?????????????????????????????????
-//??
-// function textoviyElement(params) {
-//   params.forEach(el => el.params.texContent);
-// }
-// textoviyElement(document.querySelectorAll('h2'));
-// console.log(
-//   textoviyElement(document.querySelectorAll('h2'))
-// );
-// console.log(textoviyElement(listCategories));
-//??
-//!!
-// const numberOfCategories = params => params.forEach((el, index, array) => array.length);
-// console.log('Number of categories:', numberOfCategories(listCategories));
-// numberOfCategories(listCategories);
-
+const categoryListTechnologiesAmount = categoryListTechnologies.querySelectorAll('li').length;
+console.log('Elements:', categoryListTechnologiesAmount);
 
