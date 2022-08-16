@@ -7,21 +7,6 @@
 //зелёным, если неправильное - красным.
 
 //todo Для добавления стилей, используй CSS-классы valid и invalid, которые
-//мы уже добавили в исходные файлы задания.
-
-// function onInputChange(event) {
-//   const inputValue = event.currentTarget.value;
-//   console.log(inputValue);
-
-//   inputEl.addEventListener('blur', () => {
-//     if (inputValue.textContent.length > 0) {
-//       inputEl.style.borderColor = 'green';
-//     }
-
-//     inputEl.style.borderColor = 'red';
-//   });
-// }
-
 
 const inputEl = document.querySelector('#validation-input');
 const inputLength = inputEl.dataset.length;

@@ -2,9 +2,8 @@
 
 //TODO 1) Обработка отправки формы form.login-form должна быть по событию submit.
 
-const loginForm = document.querySelector('.login-form');
-
-loginForm.addEventListener('submit', onLoginFormSubmit);
+//TODO 3) Если в форме есть незаполненные поля, выводи alert с
+// предупреждением о том, что все поля должны быть заполнены.
 
 //TODO 2) При отправке формы страница не должна перезагружаться.
 
@@ -13,11 +12,13 @@ loginForm.addEventListener('submit', onLoginFormSubmit);
 //а значение поля - значением свойства.Для доступа к элементам формы
 //используй свойство elements.
 
-//TODO 3) Если в форме есть незаполненные поля, выводи alert с
-// предупреждением о том, что все поля должны быть заполнены.
-
 //TODO 5) Выведи обьект с введенными данными в консоль и очисти
 //значения полей формы методом reset.
+
+
+const loginForm = document.querySelector('.login-form');
+
+loginForm.addEventListener('submit', onLoginFormSubmit);
 
 function onLoginFormSubmit(event) {
   event.preventDefault();
@@ -36,6 +37,6 @@ function onLoginFormSubmit(event) {
     console.log(formData);
   }
 
-  event.currentTarget.reset();
+  event.target.reset();
 }
 
