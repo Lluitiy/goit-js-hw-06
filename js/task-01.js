@@ -5,12 +5,15 @@
 //текст заголовка элемента(тега < h2 >) и количество элементов
 //? в категории(всех вложенных в него < li >).
 //TODO Number of categories: 3
+
 const listCategories = document.querySelectorAll('.item').length;
 console.log('Number of categories:', listCategories);
 
 const categoryList = document.querySelector('#categories');
+
 //TODO Category: Animals
 //TODO Elements: 4
+
 const categoryListAnimal = categoryList.children[0];
 const categoryListAnimalHeading = categoryListAnimal.querySelector('h2').textContent;
 console.log('Category:', categoryListAnimalHeading);
@@ -37,3 +40,13 @@ console.log('Category:', categoryListAnimalHeading);
 const categoryListTechnologiesAmount = categoryListTechnologies.querySelectorAll('li').length;
 console.log('Elements:', categoryListTechnologiesAmount);
 
+
+// ! второй вариант 
+// const liItemEl = document.querySelectorAll('.item');
+// console.log('Number of categories: ${liItemEl.length}');
+// console.log(liItemEl);
+
+// liItemEl.forEach(li => {
+//   console.log('Category: ', li.querySelector('h2').textContent);
+//   console.log('Elements: ', li.querySelectorAll('li').length);
+// });

@@ -48,10 +48,8 @@ function getRandomHexColor() {
 // let colorPicker = getRandomHexColor();
 
 createBtn.addEventListener('click', () => {
-  removeBoxes();
   createBoxes(num);
-}
-);
+});
 
 desroyBtn.addEventListener('click', removeBoxes);
 
