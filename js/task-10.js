@@ -47,7 +47,11 @@ function getRandomHexColor() {
 }
 // let colorPicker = getRandomHexColor();
 
-createBtn.addEventListener('click', () => createBoxes(num));
+createBtn.addEventListener('click', () => {
+  removeBoxes();
+  createBoxes(num);
+}
+);
 
 desroyBtn.addEventListener('click', removeBoxes);
 
@@ -65,11 +69,10 @@ function createBoxes(amount) {
 
   for (let i = 0; i < amount; i += 1) {
     let newBox = `<div style="
-                                width:${counter}px; 
-                                height:${counter}px;
+                                width:${counter + i * 10}px; 
+                                height:${counter + i * 10}px;
                                 background-color:${getRandomHexColor()};
                                 " ></div>`;
-    counter += 10;
     divBoxes.push(newBox);
   }
   mainBox.insertAdjacentHTML('beforeend', divBoxes.join(''));
@@ -83,6 +86,6 @@ function createBoxes(amount) {
   // };
 }
 
-function removeBoxes(evt) {
+function removeBoxes() {
   mainBox.innerHTML = '';
 }
