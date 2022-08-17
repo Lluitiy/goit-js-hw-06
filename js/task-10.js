@@ -45,7 +45,7 @@ console.log('🚀 ~ mainBox', mainBox);
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-// let colorPicker = getRandomHexColor();
+
 
 createBtn.addEventListener('click', () => {
   createBoxes(num);
@@ -55,16 +55,17 @@ desroyBtn.addEventListener('click', removeBoxes);
 
 inputNumber.addEventListener('input', amount);
 console.log('🚀 ~ inputNumber', inputNumber);
+let lastSquare = null;
 let num = 0;
 function amount(e) {
   num = Number(e.currentTarget.value);
   console.log(num);
 }
-// 1. 30x30 2. 40x40 3. 50x50
+
 function createBoxes(amount) {
   const divBoxes = [];
-  let counter = 30;
-
+  
+  let counter = lastSquare || 30;
   for (let i = 0; i < amount; i += 1) {
     let newBox = `<div style="
                                 width:${counter + i * 10}px; 
@@ -73,15 +74,8 @@ function createBoxes(amount) {
                                 " ></div>`;
     divBoxes.push(newBox);
   }
+  lastSquare = counter + amount * 10;
   mainBox.insertAdjacentHTML('beforeend', divBoxes.join(''));
-
-  // for(let el of amount){
-  //   const newBoxes = createBtn.createElement('div');
-  //   newBoxes.classlist.add('box')
-  //   newBoxes.style.width = `${30 + (el * 10)}px`;
-  //   newBoxes.style.height = `${30 + el * 10}px`;
-  //   newBoxes.style.backgroundColor = `${getRandomHexColor()}`;
-  // };
 }
 
 function removeBoxes() {

@@ -35,8 +35,8 @@ function onLoginFormSubmit(event) {
       password,
     };
     console.log(formData);
+    event.target.reset();
   }
 
-  event.target.reset();
 }
 
